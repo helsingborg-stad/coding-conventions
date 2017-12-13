@@ -1,0 +1,1 @@
+## Helsingborg Stad Coding Conventions
