@@ -1,10 +1,11 @@
 ## Helsingborg Stad Coding Conventions
 
 #Client side 
-[a relative link](css.md)
-[a relative link](html.md)
-[a relative link](js.md)
+[CSS](client/css.md)
+[HTML](client/html.md)
+[JS](client/js.md)
 
 #Server side
 
-[a relative link](php.md)
+[PHP](server/php.md)
+ 
