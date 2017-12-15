@@ -54,7 +54,9 @@ public static function install(string $language) : bool
 All plugins may have some functions that should be swift and easy to implement in other plugins or themes. These function should be placed in a single file called Public.php. This function is the only file containing function that doesn't have to be object orientated.
 
 # Vendor packages
-You may use any vendor package that is required, but it should be implemented as loose as possible (eg. with wrapper functions). This is because there may be a need to replace it in the future. 
+You may use any vendor package that is required, but it should be implemented as loose as possible (eg. with wrapper functions). This is because there may be a need to replace it in the future. The formatting of vendor packages (PSR/PEAR etc) is not important, but they shoould be object orientated. 
+
+All vendor packages should be reviewed before a requie. This is a very important aspect as they may introduce unsuspected issues in the future. 
 
 # Omitting end tags & shorthands
 The end tag ```php ?> ``` should not be used in any case. If you feel the urge to use it, you are proboly doing it wrong. 
