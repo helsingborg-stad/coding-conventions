@@ -65,3 +65,6 @@ The shorthands of php-start ```php <? ``` should not be used in any case. Always
 
 # Views 
 Functions is not allowed in any views, all logic and data fething (including translations) should be done in respective view controller. Using if-statements and for loops should be avioided in views whenever possible, but is a necessety in many cases. 
+
+# Class loader
+All code should be compatbile with a PSR class loader. No classes should be included manually. 
