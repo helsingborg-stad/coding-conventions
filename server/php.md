@@ -1,5 +1,5 @@
 # PHP coding conventions
-Specifies how to write PHP. 
+Specifies how to write PHP. This is simply a summary of how PSR works with some small additions. You may benefit from installing a PSR-2 linter in your editor. 
 
 # 1. Example of a complete class
 
