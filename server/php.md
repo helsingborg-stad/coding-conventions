@@ -51,7 +51,7 @@ public static function install(string $language) : bool
 ```
 
 ## Public functions 
-All plugins may have some functions that should be swift and easy to implement in other plugins or themes. These function should be placed in a single file called Public.php. This function is the only file containing function that doesn't have to be object orientated.
+All plugins may have some functions that should be swift and easy to implement in other plugins or themes. These function should be placed in a single file called Public.php. This function is the only file containing function that doesn't have to be object orientated. They should however only be wrappers of code contained in classes. 
 
 ## Vendor packages
 You may use any vendor package that is required, but it should be implemented as loose as possible (eg. with wrapper functions). This is because there may be a need to replace it in the future. The formatting of vendor packages (PSR/PEAR etc) is not important, but they shoould be object orientated. 
@@ -66,5 +66,7 @@ The shorthands of php-start ```php <? ``` should not be used in any case. Always
 ## Views 
 Functions is not allowed in any views, all logic and data fething (including translations) should be done in respective view controller. Using if-statements and for loops should be avioided in views whenever possible, but is a necessety in many cases. 
 
+In a few cases you may want to use php in a view (please don't), then use laravel's built-in php start and end tags @php and @endphp. 
+
 ## Class loader
-All code should be compatbile with a PSR class loader. No classes should be included manually. 
+All code should be compatbile with a PSR class loader. No classes should be included manually.
