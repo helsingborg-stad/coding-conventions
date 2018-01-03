@@ -20,5 +20,5 @@
 - No hardcoding
     + Not a single line of code should be written that is specific to the target organization. All content and appearance should be flexible enough to be used by others. 
 - Readable and simplistic before smart
-    + Every bit of implementation must be readable. This requirement is more important than smart ad innovative implementations.
+    + Every bit of implementation must be readable. This requirement is more important than smart and innovative implementations.
  
