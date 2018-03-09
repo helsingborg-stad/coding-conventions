@@ -1,6 +1,8 @@
 # PHP coding conventions
 Specifies how to write PHP. This is simply a summary of how PSR works with some small additions. You may benefit from installing a PSR-2 linter in your editor. 
 
+If you feel that something is missing in this document, refer to https://www.php-fig.org/psr/psr-2/.
+
 The platform always requires compability with the previous stable version; For now, version 7.0 of PHP. 
 
 ## Example of a complete class
