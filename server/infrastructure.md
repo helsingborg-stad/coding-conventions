@@ -4,7 +4,7 @@ Our infrastrucure of code is simple, but not a common "go-to" solution. We do no
 ## Live enviroment
 All sites are located in 'mnt/persist/www/'. The are named by a logical structure docroot_[sitename]. The beta & test enviroment are suffixed with _test and _beta. For example, our live version of helsingborg.se resides in 'mnt/persist/www/docroot_helsingborg' and the test equivalent resides in 'mnt/persist/www/docroot_helsingborg_test'. 
 
-##Code
+## Code
 
 ### The container
 All websites should be packaged in its own repository. It should include relevant configurations, required plugin index (as a composer file) and other assets. This repository may include the full theme, if it's not being used in multiple containers (sites). 
