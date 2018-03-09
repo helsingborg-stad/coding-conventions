@@ -53,6 +53,39 @@ public static function install(string $language) : bool
 ## Public functions 
 All plugins may have some functions that should be swift and easy to implement in other plugins or themes. These function should be placed in a single file called Public.php. This function is the only file containing function that doesn't have to be object orientated. They should however only be wrappers of code contained in classes. 
 
+## Public, Private, Protected functions in classes
+In contradiction to PSR coding standards private functions in classes should be prefixed with an "_" to emphasis that the function isen't intended to be used outside the present class definition. This is a relative new requirement that isen't applied in moste cases. We do however have the goal to implement this standard in all classes possible.
+
+## Return types
+Always have tha ambition to use return types in your code. We want stuff to break when stuff dosen't return variables as they wehere intended to. This minimizes the number of "wierd" errors that may appear in the platform. 
+
+## Always return as soon as possible
+You should always strive to return a result of a function as soon as possible. Also, a default last return should be defined. Eaven in cases where it's obvois that a function will not end up. 
+
+```php
+/* DO NOT DO THIS */ 
+public function example(string $var) : bool
+{
+    if($var == "a") {
+        return true; 
+    } else {
+        return false; 
+    }
+}
+```
+
+```php
+/* DO LIKE THIS */ 
+public function example(string $var) : bool
+{
+    if($var == "a") {
+        return true; 
+    }
+
+    return false; 
+}
+```
+
 ## Vendor packages
 You may use any vendor package that is required, but it should be implemented as loose as possible (eg. with wrapper functions). This is because there may be a need to replace it in the future. The formatting of vendor packages (PSR/PEAR etc) is not important, but they shoould be object orientated. 
 
@@ -70,3 +103,13 @@ In a few cases you may want to use php in a view (please don't), then use larave
 
 ## Class loader
 All code should be compatbile with a PSR class loader. No classes should be included manually.
+
+## Initilization of classes
+Whenever possible, a __construct of a function should not be done before Wordpress itself has ben initialized. In other words, use a hook when running your code at all times if it dosen't affect performance or common sense. 
+
+# WordPress hooks and filters 
+All hooks and filters SHOULD be documentated when created in the readme of the relevant plugin. The should also have a logic format that is coherent with the current namespace. 
+
+For instance, if you want to apply a filter in a controller with the namespace(and classname) "MyAwesomePlugin/Theme/Archive". Then your filer should be named "MyAwesomePlugin/Theme/Archive/varname_affected_by_filter". 
+
+You may not use __NAMESPACE__ to achive this due to bad readability of your code. Again, do not try to be smart, try to be evident. 
