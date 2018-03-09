@@ -11,6 +11,8 @@
 
 [PHP: Dictates how to write good backend implementations and how they should look like.](server/php.md)
 
+[Infrastucture: Deployments & severs](server/infrastructure.md)
+
 ## Ground principles
 
 - The general mindset 
