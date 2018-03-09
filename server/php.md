@@ -87,7 +87,7 @@ public function example(string $var) : bool
 ```
 
 ## Vendor packages
-You may use any vendor package that is required, but it should be implemented as loose as possible (eg. with wrapper functions). This is because there may be a need to replace it in the future. The formatting of vendor packages (PSR/PEAR etc) is not important, but they shoould be object orientated. 
+You may use any vendor package that is required, but it should be implemented as loose as possible (eg. with wrapper functions). This is because there may be a need to replace it in the future. The formatting of vendor packages (PSR/PEAR etc) is not important, but they shoould be object orientated.
 
 All vendor packages should be reviewed before a requie. This is a very important aspect as they may introduce unsuspected issues in the future. 
 
@@ -107,9 +107,52 @@ All code should be compatbile with a PSR class loader. No classes should be incl
 ## Initilization of classes
 Whenever possible, a __construct of a function should not be done before Wordpress itself has ben initialized. In other words, use a hook when running your code at all times if it dosen't affect performance or common sense. 
 
-# WordPress hooks and filters 
+## WordPress hooks and filters 
 All hooks and filters SHOULD be documentated when created in the readme of the relevant plugin. The should also have a logic format that is coherent with the current namespace. 
 
 For instance, if you want to apply a filter in a controller with the namespace(and classname) "MyAwesomePlugin/Theme/Archive". Then your filer should be named "MyAwesomePlugin/Theme/Archive/varname_affected_by_filter". 
 
 You may not use __NAMESPACE__ to achive this due to bad readability of your code. Again, do not try to be smart, try to be evident. 
+
+## Plugin & Theme structure
+We strive towards separation of administration and theme as mutch as possible. And almost always use the same folder structure in our plugins & themes. A folder can be swapped out to a single file, with identical name if beleve that is enough (often used in small plugins). 
+
+* Root folder 
+    - App.php (main plugin/theme file)
+    - AcfFields [Folder for saving acf fields]
+        + json [json to enable swift editing/updating]
+        + php [php version of the configuration - This is whats being used]
+    - Admin [Code that runs in administration panel]
+    - Theme [General theme/frontend modifications]
+    - Api [All code that makes updates to the api]
+    - Entity [Wrapper classes for Taxonomys & Post types]
+    - Helper [Usable classes for whule plugin, shuld be compatible with the use statement use Philo/Blade as Blade in any other class]
+    - PostType [Definitions of plugins post types. Should use Entitiy classes if defined]
+    - Taxonomy [Same as above, but for taxonomys]
+    - Vendor [Vendor packages imported with Composer]
+    - Views [If you have any views, they would be placed here preferably in a blade engine compatible format]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
