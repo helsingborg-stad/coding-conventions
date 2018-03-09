@@ -1,6 +1,9 @@
 # Infrastructure
 Our infrastrucure of code is simple, but not a common "go-to" solution. We do not stive to limit the number of reposorys and making large plugins. A new plugin shuld be created when there is a clear purpose. 
 
+## Live enviroment
+All sites are located in 'mnt/persist/www/'. The are named by a logical structure docroot_[sitename]. The beta & test enviroment are suffixed with _test and _beta. For example, our live version of helsingborg.se resides in 'mnt/persist/www/docroot_helsingborg' and the test equivalent resides in 'mnt/persist/www/docroot_helsingborg_test'. 
+
 ##Code
 
 ### The container
@@ -22,6 +25,9 @@ We host our code in a seperate enviroment and for simplicity we have activly cos
     + beta - A version of the site created for the single purpose of testing new code (only for developers).
     + test - A test version of the site that should contain __production ready__ code that editrs can use to test their hypothesis. 
     
-- __For Plugins, themes and packages:__ Use a terminal tool to ssh into the production machine. CD to the relevant docroot directory (public_html). All sites are located in 'mnt/persist/www/'. The are named by a logical structure docroot_[sitename]. The beta & test enviroment are suffixed with _test and _beta. For example, our live version of helsingborg.se resides in 'mnt/persist/www/docroot_helsingborg' and the test equivalent resides in 'mnt/persist/www/docroot_helsingborg_test'. 
+- __For Plugins, themes and packages:__ Use a terminal tool to ssh into the production machine. 
+    + CD to the relevant docroot directory. 
+    + Run composer update [you may define a specific package]
+
 
 
