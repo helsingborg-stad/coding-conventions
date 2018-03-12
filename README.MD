@@ -13,6 +13,9 @@
 
 [Infrastucture: Deployments & severs](server/infrastructure.md)
 
+## Versioning
+We are using semantic versioning for all of our plugins, themes and platform overall. Refer to semver 2.0 when unsure: https://semver.org/. 
+
 ## Ground principles
 
 - __The general mindset__ 
