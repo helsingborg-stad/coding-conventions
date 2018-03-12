@@ -1,5 +1,5 @@
 # Infrastructure
-Our infrastrucure of code is simple, but not a common "go-to" solution. We do not stive to limit the number of reposorys and making large plugins. A new plugin shuld be created when there is a clear purpose. 
+Our infrastrucure is simple, but not a common "go-to" solution. We do not strive to limit the number of reposorys and making large plugins. A new plugin shuld be created when there is a clear purpose. 
 
 ## Live enviroment
 All sites are located in 'mnt/persist/www/'. They are named by a logical structure docroot_[sitename]. The beta & test enviroment are suffixed with _test and _beta. For example, our live version of helsingborg.se resides in 'mnt/persist/www/docroot_helsingborg' and the test equivalent resides in 'mnt/persist/www/docroot_helsingborg_test'. 
